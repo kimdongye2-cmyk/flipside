@@ -14,7 +14,7 @@
 .brand{position:absolute;left:50%;transform:translateX(-50%);font-family:"Barlow Condensed",sans-serif;font-size:28px;letter-spacing:-1.5px;font-weight:900;white-space:nowrap;color:#f7f7f7}.brand .sideword{font-family:"Permanent Marker",cursive;font-weight:400;letter-spacing:-2px;font-size:.85em;text-shadow:1px 1px var(--blue),-1px -1px var(--pink)}
 .hero{min-height:740px;height:100vh;max-height:1000px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
 .panel{position:relative;display:flex;align-items:center;min-height:620px;isolation:isolate;overflow:hidden}.panel-a{background:var(--cream);color:var(--ink)}.panel-b{background:#0b0a10;color:#fff}
-.panel-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}.panel-a .panel-image{object-position:center 40%;filter:grayscale(.45) sepia(.12) brightness(1.04);opacity:.76}.panel-b .panel-image{object-position:center 35%;filter:brightness(.45) saturate(.8) contrast(1.15);opacity:.8}
+.panel-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}.image-placeholder{background:linear-gradient(135deg,#e9e4d9,#f8f5ee)}.image-placeholder-dark{background:radial-gradient(ellipse at 60% 45%,#21152b 0%,#0b0a10 58%,#050506 100%)}.panel-a .panel-image{object-position:center 40%;filter:grayscale(.45) sepia(.12) brightness(1.04);opacity:.76}.panel-b .panel-image{object-position:center 35%;filter:brightness(.45) saturate(.8) contrast(1.15);opacity:.8}
 .panel-a:after,.panel-b:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none}.panel-a:after{background:linear-gradient(90deg,rgba(244,240,231,.9),rgba(244,240,231,.4) 40%,rgba(244,240,231,.05))}.panel-b:after{background:linear-gradient(90deg,rgba(5,4,10,.05),rgba(5,4,10,.25) 50%,rgba(5,4,10,.82)),radial-gradient(ellipse at 60% 50%,rgba(62,28,98,.25),transparent 60%)}
 .panel-b:before{content:"";position:absolute;inset:0;z-index:0;opacity:.2;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.38'/%3E%3C/svg%3E")}
 .panel-copy{position:relative;z-index:2;padding:0 5.5vw;max-width:340px}.panel-a .panel-copy{align-self:center;margin-top:35px}.panel-b .panel-copy{margin-left:auto;text-align:right;align-self:center}.eyebrow{font-size:11px;letter-spacing:4px;font-weight:800;text-transform:uppercase;margin:0 0 12px}.subhead{font-size:10px;letter-spacing:4px;text-transform:uppercase;margin:0 0 20px;opacity:.72}.panel-copy p{font-size:12px;line-height:1.8;max-width:200px;margin:0 0 22px}.panel-b .panel-copy p{margin-left:auto}.rule{height:1px;width:42px;background:currentColor;opacity:.65}
@@ -23,9 +23,27 @@
 .scroll-note{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:3px;z-index:5;color:#fff;mix-blend-mode:difference}
 .intro{text-align:center;padding:70px 24px 64px;background:#0a0a0b;border-top:1px solid #333}.intro h2{font-size:11px;letter-spacing:4px;margin:0 0 20px}.intro p{font-size:12px;line-height:2;color:#c7c4c8;margin:0 auto;max-width:520px}.intro .rule{margin:25px auto 0}
 .collections{display:grid;grid-template-columns:1fr 1fr;padding:0 3.2vw 75px;background:#0a0a0b}.collection{padding:0 2vw 20px}.collection-b{border-left:1px solid #333}.collection h2{font-size:12px;letter-spacing:3px;margin:0 0 8px}.collection p{font-size:11px;color:#b7b4ba;margin:0}.explore{display:inline-block;font-size:9px;letter-spacing:2px;margin-top:13px;border-bottom:1px solid #777;padding-bottom:5px}
-.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-top:16px}.product{min-width:0}.product-img{width:100%;aspect-ratio:.78;object-fit:cover;display:block;background:#222;transition:transform .4s,filter .4s;filter:saturate(.75)}.product:hover .product-img{transform:translateY(-4px);filter:saturate(1)}.product-name{font-size:10px;margin:10px 0 5px}.price{font-size:10px;color:#aaa}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-top:16px}.product{min-width:0}.product-img{width:100%;aspect-ratio:.78;object-fit:cover;display:block;background:#222;transition:transform .4s,filter .4s;filter:saturate(.75)}.product-placeholder{background:#1a1a1d;border:1px solid #38383c}.collection:not(.collection-b) .product-placeholder{background:#e8e4dc;border:1px solid #d3cec3}.feature-img{width:100%;aspect-ratio:.8;object-fit:cover;display:block;background:#222}.feature-placeholder{background:#1d1d20;border:1px solid #38383c}.product:hover .product-img{transform:translateY(-4px);filter:saturate(1)}.product-name{font-size:10px;margin:10px 0 5px}.price{font-size:10px;color:#aaa}
 .shop-section{padding:72px 4vw 90px;background:#111;border-top:1px solid #292929}.section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}.section-title h2{font-family:"Barlow Condensed",sans-serif;font-size:clamp(28px,4vw,48px);margin:0;letter-spacing:1px}.section-title span{font-size:9px;letter-spacing:2px;color:#aaa}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.feature{border:1px solid #303033;padding:10px}.feature img{width:100%;aspect-ratio:.8;object-fit:cover;display:block;background:#222}.feature h3{font-size:11px;font-weight:500;margin:12px 0 6px}.feature p{font-size:10px;color:#aaa;margin:0}
 .about{padding:70px 20px;text-align:center;background:var(--cream);color:var(--ink)}.about h2{font-family:"Barlow Condensed",sans-serif;font-size:34px;letter-spacing:1px;margin:0 0 16px}.about p{font-size:12px;line-height:1.9;max-width:520px;margin:0 auto;color:#4e4b46}
+.account-link{cursor:pointer;background:none;border:0;color:inherit;font:inherit;padding:0;opacity:.82}.account-link:hover{opacity:1}
+.auth-overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:50;display:none;align-items:center;justify-content:center;padding:20px}
+.auth-overlay.open{display:flex}
+.auth-box{position:relative;width:min(420px,100%);background:var(--cream);color:#171715;padding:34px 30px 28px}
+.auth-close{position:absolute;right:14px;top:10px;background:none;border:0;font-size:25px;cursor:pointer;color:#171715}
+.auth-brand{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:26px;letter-spacing:-1px;margin:0 0 6px}
+.auth-brand span{font-family:"Permanent Marker",cursive;font-weight:400}
+.auth-sub{font-size:11px;color:#6f6b63;margin:0 0 24px}
+.auth-tabs{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #c8c2b8;margin-bottom:20px}
+.auth-tabs button{padding:12px 6px;background:none;border:0;border-bottom:2px solid transparent;font-weight:700;font-size:12px;cursor:pointer;color:#777}
+.auth-tabs button.active{border-bottom-color:#171715;color:#171715}
+.auth-form label{display:block;font-size:10px;letter-spacing:1px;margin:14px 0 7px}
+.auth-form input{width:100%;padding:12px;border:1px solid #c9c3b9;background:#fff;font:13px "DM Sans",sans-serif;outline:none}
+.auth-form input:focus{border-color:#171715}
+.auth-submit{width:100%;margin-top:20px;padding:13px;background:#111;color:#fff;border:0;font-size:11px;letter-spacing:2px;font-weight:700;cursor:pointer}
+.auth-message{min-height:16px;font-size:11px;line-height:1.6;margin:12px 0 0;color:#5e574d}
+.auth-note{font-size:10px;line-height:1.7;color:#777;margin:16px 0 0}
+.account-state{font-size:10px;letter-spacing:1px;color:#fff;margin-left:4px}
 footer{padding:28px 4vw;display:flex;justify-content:space-between;align-items:center;background:#080809;font-size:9px;letter-spacing:1.5px;color:#aaa}.footer-brand{font-family:"Barlow Condensed",sans-serif;font-size:20px;font-weight:900;color:#fff;letter-spacing:-1px}.footer-brand span{font-family:"Permanent Marker",cursive;font-weight:400;text-shadow:1px 0 var(--blue),-1px 0 var(--pink)}
 @media(max-width:700px){.topbar{height:58px;padding:0 16px}.navlinks{gap:12px;font-size:8px;letter-spacing:1px}.navlinks a:nth-child(2),.navicons a:nth-child(2){display:none}.navicons{gap:12px;font-size:12px}.brand{font-size:23px}.hero{height:auto;min-height:0;max-height:none;grid-template-columns:1fr}.panel{min-height:68vh;height:68vh}.panel-copy{padding:0 24px}.panel-a .panel-copy{margin-top:30px}.panel-b .panel-copy{padding-right:24px}.hero-logo{top:50%;font-size:clamp(54px,15vw,100px);letter-spacing:-4px}.line-mark{bottom:18px;left:20px}.panel-b .line-mark{right:20px}.intro{padding:52px 20px}.collections{grid-template-columns:1fr;padding:0 16px 50px}.collection{padding:0 0 35px}.collection-b{border-left:0;border-top:1px solid #333;padding-top:32px}.products{gap:7px}.product-name,.price{font-size:9px}.feature-grid{grid-template-columns:repeat(2,1fr)}.shop-section{padding:48px 16px 60px}footer{gap:16px;flex-wrap:wrap}.scroll-note{display:none}}
 </style>
@@ -34,16 +52,16 @@ footer{padding:28px 4vw;display:flex;justify-content:space-between;align-items:c
 <header class="topbar">
 <nav class="navlinks"><a href="#collections">SHOP</a><a href="#about">ABOUT</a><a href="#collections">LOOKBOOK</a></nav>
 <a class="brand" href="#home">FLIP<span class="sideword">SIDE</span><sup style="font:9px 'DM Sans';vertical-align:top;letter-spacing:0">®</sup></a>
-<div class="navicons"><a href="#collections">⌕</a><a href="#about">♙</a><a href="#collections">▢ <span id="cart-count">(0)</span></a></div>
+<div class="navicons"><a href="#collections">⌕</a><button class="account-link" id="account-open" type="button" aria-label="로그인 또는 회원가입">♙ <span class="account-state" id="account-state"></span></button><a href="#collections">▢ <span id="cart-count">(0)</span></a></div>
 </header>
 <main id="home">
 <section class="hero">
 <a class="panel panel-a" href="#side-a">
-<img class="panel-image" src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1400&q=85" alt="Minimal neutral casual fashion">
+<div class="panel-image image-placeholder" aria-label="SIDE A 대표 이미지 자리"></div>
 <div class="panel-copy"><h1 class="eyebrow">SIDE A</h1><div class="subhead">DAILY CASUAL</div><p>Less noise.<br>More of yourself.</p><div class="rule"></div></div><div class="line-mark">FLIPSIDE®<br>LINE 01</div>
 </a>
 <a class="panel panel-b" href="#side-b">
-<img class="panel-image" src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1400&q=85" alt="Dark streetwear fashion">
+<div class="panel-image image-placeholder image-placeholder-dark" aria-label="SIDE B 대표 이미지 자리"></div>
 <div class="panel-copy"><h2 class="eyebrow">SIDE B</h2><div class="subhead">STREET / GHOST</div><p>Break the pattern.<br>Become the noise.</p><div class="rule" style="margin-left:auto"></div></div><div class="line-mark">FLIPSIDE®<br>LINE 02</div>
 </a>
 <div class="hero-logo"><span class="flip">FLIP</span><span class="sideword">SIDE</span></div><div class="scroll-note">SCROLL TO EXPLORE ↓</div>
@@ -52,27 +70,86 @@ footer{padding:28px 4vw;display:flex;justify-content:space-between;align-items:c
 <section class="collections" id="collections">
 <div class="collection" id="side-a"><h2>SIDE A　COLLECTION</h2><p>일상 속에 스며드는 편안함.</p><a class="explore" href="#side-a-products">EXPLORE →</a>
 <div class="products" id="side-a-products">
-<article class="product"><img class="product-img" src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=500&q=80" alt="Cream knitwear"><div class="product-name">Essential Knit</div><div class="price">₩59,000</div></article>
-<article class="product"><img class="product-img" src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=500&q=80" alt="Minimal shirt"><div class="product-name">Everyday Shirt</div><div class="price">₩49,000</div></article>
-<article class="product"><img class="product-img" src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=500&q=80" alt="Casual jacket"><div class="product-name">Soft Utility Jacket</div><div class="price">₩89,000</div></article>
-<article class="product"><img class="product-img" src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=500&q=80" alt="Casual trousers"><div class="product-name">Straight Trousers</div><div class="price">₩69,000</div></article>
+<article class="product"><div class="product-img product-placeholder" role="img" aria-label="Cream knitwear"></div><div class="product-name">Essential Knit</div><div class="price">₩59,000</div></article>
+<article class="product"><div class="product-img product-placeholder" role="img" aria-label="Minimal shirt"></div><div class="product-name">Everyday Shirt</div><div class="price">₩49,000</div></article>
+<article class="product"><div class="product-img product-placeholder" role="img" aria-label="Casual jacket"></div><div class="product-name">Soft Utility Jacket</div><div class="price">₩89,000</div></article>
+<article class="product"><div class="product-img product-placeholder" role="img" aria-label="Casual trousers"></div><div class="product-name">Straight Trousers</div><div class="price">₩69,000</div></article>
 </div></div>
 <div class="collection collection-b" id="side-b"><h2>SIDE B　COLLECTION</h2><p>무너진 경계 위의 자유.</p><a class="explore" href="#side-b-products">EXPLORE →</a>
 <div class="products" id="side-b-products">
-<article class="product"><img class="product-img" src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=500&q=80" alt="Oversized black hoodie"><div class="product-name">Ghost Hoodie</div><div class="price">₩99,000</div></article>
-<article class="product"><img class="product-img" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80" alt="Black graphic T-shirt"><div class="product-name">Noise Graphic Tee</div><div class="price">₩45,000</div></article>
-<article class="product"><img class="product-img" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80" alt="Streetwear outfit"><div class="product-name">Distorted Cargo</div><div class="price">₩109,000</div></article>
-<article class="product"><img class="product-img" src="https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=500&q=80" alt="Black cap"><div class="product-name">After Dark Cap</div><div class="price">₩39,000</div></article>
+<article class="product"><div class="product-img product-placeholder" role="img" aria-label="Oversized black hoodie"></div><div class="product-name">Ghost Hoodie</div><div class="price">₩99,000</div></article>
+<article class="product"><div class="product-img product-placeholder" role="img" aria-label="Black graphic T-shirt"></div><div class="product-name">Noise Graphic Tee</div><div class="price">₩45,000</div></article>
+<article class="product"><div class="product-img product-placeholder" role="img" aria-label="Streetwear outfit"></div><div class="product-name">Distorted Cargo</div><div class="price">₩109,000</div></article>
+<article class="product"><div class="product-img product-placeholder" role="img" aria-label="Black cap"></div><div class="product-name">After Dark Cap</div><div class="price">₩39,000</div></article>
 </div></div></section>
 <section class="shop-section"><div class="section-title"><h2>SELECTED PIECES</h2><span>FLIPSIDE® / OBJECTS FOR BOTH SIDES</span></div><div class="feature-grid">
-<article class="feature"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80" alt="T-shirt"><h3>FLIP / Basic Tee</h3><p>Clean form, everyday fit.</p></article>
-<article class="feature"><img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=700&q=80" alt="Black hoodie"><h3>SIDE / Ghost Hoodie</h3><p>Wear your other side.</p></article>
-<article class="feature"><img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=700&q=80" alt="Jacket"><h3>FLIP / Utility Jacket</h3><p>Quiet details, sharp shape.</p></article>
-<article class="feature"><img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=700&q=80" alt="Cap"><h3>SIDE / After Dark Cap</h3><p>Made for the noise.</p></article>
+<article class="feature"><div class="feature-img feature-placeholder" role="img" aria-label="T-shirt"></div><h3>FLIP / Basic Tee</h3><p>Clean form, everyday fit.</p></article>
+<article class="feature"><div class="feature-img feature-placeholder" role="img" aria-label="Black hoodie"></div><h3>SIDE / Ghost Hoodie</h3><p>Wear your other side.</p></article>
+<article class="feature"><div class="feature-img feature-placeholder" role="img" aria-label="Jacket"></div><h3>FLIP / Utility Jacket</h3><p>Quiet details, sharp shape.</p></article>
+<article class="feature"><div class="feature-img feature-placeholder" role="img" aria-label="Cap"></div><h3>SIDE / After Dark Cap</h3><p>Made for the noise.</p></article>
 </div></section>
 <section class="about" id="about"><h2>TWO SIDES. ONE IDENTITY.</h2><p>차분한 일상과 거친 밤, 서로 다른 취향이 한 사람 안에 공존합니다.<br>FLIPSIDE는 어느 한쪽을 선택하라고 말하지 않습니다.<br>오늘의 당신이 어떤 모습이든, 그 자체로 충분하니까.</p></section>
 </main>
+<div class="auth-overlay" id="auth-overlay" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+  <div class="auth-box">
+    <button class="auth-close" id="auth-close" aria-label="닫기">×</button>
+    <h2 class="auth-brand" id="auth-title">FLIP<span>SIDE</span>®</h2>
+    <p class="auth-sub">TWO SIDES. ONE IDENTITY.</p>
+    <div class="auth-tabs"><button type="button" class="active" data-auth-tab="login">로그인</button><button type="button" data-auth-tab="signup">회원가입</button></div>
+    <form class="auth-form" id="auth-form">
+      <label for="auth-email">이메일</label><input id="auth-email" type="email" placeholder="name@example.com" autocomplete="email" required>
+      <label for="auth-password">비밀번호</label><input id="auth-password" type="password" placeholder="비밀번호 입력" autocomplete="current-password" minlength="6" required>
+      <div id="signup-extra" hidden><label for="auth-nickname">닉네임</label><input id="auth-nickname" type="text" placeholder="사용할 닉네임" autocomplete="nickname"></div>
+      <button class="auth-submit" type="submit" id="auth-submit">로그인</button>
+      <p class="auth-message" id="auth-message" aria-live="polite"></p>
+    </form>
+    <p class="auth-note">현재는 화면 시안용 로그인 창입니다. 실제 계정 생성·로그인 기능은 서버나 인증 서비스 연결이 필요합니다.</p>
+  </div>
+</div>
 <footer><div class="footer-brand">FLIP<span>SIDE</span>®</div><div>© 2026 FLIPSIDE. ALL RIGHTS RESERVED.</div><div>SEOUL, KOREA</div></footer>
-<script>document.querySelectorAll('a[href^="#"]').forEach(link=>{link.addEventListener('click',e=>{const target=document.querySelector(link.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}})});</script>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(link=>{link.addEventListener('click',e=>{const target=document.querySelector(link.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}})});
+const overlay=document.getElementById('auth-overlay');
+const openBtn=document.getElementById('account-open');
+const closeBtn=document.getElementById('auth-close');
+const tabs=[...document.querySelectorAll('[data-auth-tab]')];
+const form=document.getElementById('auth-form');
+const submit=document.getElementById('auth-submit');
+const extra=document.getElementById('signup-extra');
+const message=document.getElementById('auth-message');
+const emailInput=document.getElementById('auth-email');
+const passwordInput=document.getElementById('auth-password');
+const nickInput=document.getElementById('auth-nickname');
+let mode='login';
+function openAuth(){overlay.classList.add('open');message.textContent='';}
+function closeAuth(){overlay.classList.remove('open');}
+function setMode(next){
+ mode=next;tabs.forEach(t=>t.classList.toggle('active',t.dataset.authTab===mode));
+ submit.textContent=mode==='login'?'로그인':'회원가입';
+ passwordInput.autocomplete=mode==='login'?'current-password':'new-password';
+ extra.hidden=mode!=='signup';nickInput.required=mode==='signup';
+ message.textContent='';
+}
+openBtn.addEventListener('click',()=>{
+ const signedIn=sessionStorage.getItem('flipside-demo-user');
+ if(signedIn){if(confirm('로그아웃할까요?')){sessionStorage.removeItem('flipside-demo-user');document.getElementById('account-state').textContent='';message.textContent='로그아웃했습니다.';}return;}
+ setMode('login');openAuth();
+});
+closeBtn.addEventListener('click',closeAuth);
+overlay.addEventListener('click',e=>{if(e.target===overlay)closeAuth();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAuth();});
+tabs.forEach(t=>t.addEventListener('click',()=>setMode(t.dataset.authTab)));
+form.addEventListener('submit',e=>{
+ e.preventDefault();
+ const email=emailInput.value.trim();
+ if(mode==='signup'&&!nickInput.value.trim()){message.textContent='닉네임을 입력해 주세요.';return;}
+ // Demo-only: no credentials are sent or stored; this is not a real authentication system.
+ sessionStorage.setItem('flipside-demo-user',email);
+ document.getElementById('account-state').textContent='●';
+ message.textContent=mode==='login'?'시안용으로 로그인 상태를 표시했습니다. 실제 계정 인증은 연결되지 않았습니다.':'회원가입 화면 확인 완료. 실제 회원 정보는 저장되지 않았습니다.';
+ submit.textContent='확인 완료';
+ setTimeout(closeAuth,1800);
+});
+</script>
 </body>
 </html>
