@@ -77,8 +77,20 @@ nav {
 
 .logo {
   font-size: 27px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: #ff49c8;
+  text-shadow: 2px 0 #54dcff;
+}
+
+.logo sup {
+  font-size: 9px;
+  vertical-align: top;
+  letter-spacing: 0;
 }
 
 .logo span {
@@ -584,8 +596,8 @@ footer {
 
 <nav>
   <a class="logo" href="#home" onclick="showView('home')">
-    FLIP<span>SIDE</span>®
-  </a>
+    FLIP<span>SIDE</span><sup>®</sup>
+</a>
 
   <div class="nav-links">
     <a href="#side-a" onclick="showLine('A')">SIDE A</a>
