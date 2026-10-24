@@ -3,85 +3,1054 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FLIPSIDE</title>
+
+<title>FLIPSIDE® — Two Sides, One Identity</title>
+
+<meta name="theme-color" content="#111111">
+<meta name="description" content="FLIPSIDE — Two sides, one identity.">
+
 <style>
-* { box-sizing: border-box; }
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --black: #111111;
+  --white: #f6f5f1;
+  --pink: #ff49c8;
+  --blue: #54dcff;
+  --muted: #888888;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  background: #101010;
-  color: white;
-  font-family: Arial, sans-serif;
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', Arial, sans-serif;
 }
-header {
-  height: 90px;
+
+button, a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 4px;
+}
+
+.topbar {
+  height: 34px;
+  background: var(--pink);
+  color: #111;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 26px;
-  font-weight: 900;
-  letter-spacing: 8px;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
-main {
+
+nav {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  border-bottom: 1px solid #333;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.logo span {
+  color: var(--pink);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+  color: var(--pink);
+}
+
+.nav-button {
+  border: 1px solid #555;
+  background: transparent;
+  color: white;
+  padding: 10px 14px;
+  font-size: 11px;
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+  animation: appear .35s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero {
+  min-height: 590px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: calc(100vh - 150px);
+  padding: 20px;
+  gap: 12px;
 }
-.side {
+
+.hero-panel {
+  position: relative;
+  min-height: 550px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  transition: .3s;
+  justify-content: space-between;
+  padding: 30px;
+  transition: filter .3s;
 }
-.side-a {
+
+.hero-panel:hover {
+  filter: brightness(.91);
+}
+
+.panel-a {
   background: #e9e6df;
   color: #171717;
 }
-.side-b {
-  background: #17151d;
-  color: #ff4bc8;
+
+.panel-b {
+  background:
+    radial-gradient(ellipse at 70% 35%, #343047 0%, transparent 45%),
+    #17151c;
+  color: white;
 }
-.side h1 {
-  font-size: clamp(42px, 7vw, 100px);
-  margin: 0;
-}
-.side p {
-  font-size: 11px;
-  letter-spacing: 4px;
-}
-.side:hover { filter: brightness(.8); }
-.side-b:hover h1 {
-  text-shadow: 4px 0 #00d9ff, -4px 0 #ff4bc8;
-}
-footer {
-  padding: 25px;
-  text-align: center;
+
+.eyebrow {
   font-size: 10px;
   letter-spacing: 3px;
-  color: #888;
+  font-weight: 700;
 }
-@media (max-width: 600px) {
-  main {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+
+.hero-title {
+  font-size: clamp(55px, 8vw, 125px);
+  line-height: .82;
+  letter-spacing: -8px;
+  margin: 0;
+  font-weight: 800;
+}
+
+.panel-b .hero-title {
+  color: var(--pink);
+  text-shadow: 3px 0 var(--blue);
+}
+
+.hero-description {
+  font-size: 12px;
+  line-height: 1.8;
+  max-width: 230px;
+}
+
+.enter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid currentColor;
+  padding: 12px 0;
+  width: 150px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.enter span {
+  font-size: 20px;
+}
+
+.intro {
+  padding: 100px 7%;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+.intro-label {
+  color: var(--pink);
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+.intro h2 {
+  font-size: clamp(30px, 5vw, 64px);
+  letter-spacing: -3px;
+  line-height: 1.1;
+  margin: 25px 0;
+}
+
+.intro p {
+  color: #999;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 65px 5% 30px;
+}
+
+.section-heading h2 {
+  font-size: clamp(32px, 5vw, 60px);
+  margin: 0;
+  letter-spacing: -3px;
+}
+
+.section-heading p {
+  color: #999;
+  font-size: 11px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  padding: 0 5% 90px;
+}
+
+.product-card {
+  cursor: pointer;
+  min-width: 0;
+}
+
+.product-image {
+  aspect-ratio: 3 / 4;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.04);
+}
+
+.product-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  gap: 12px;
+}
+
+.product-placeholder b {
+  font-size: clamp(35px, 7vw, 80px);
+  letter-spacing: -5px;
+}
+
+.product-placeholder small {
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.product-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: white;
+  color: black;
+  padding: 7px 9px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 15px 0;
+  font-size: 11px;
+}
+
+.product-info p {
+  color: #999;
+  margin: 7px 0 0;
+  font-size: 10px;
+}
+
+.price {
+  white-space: nowrap;
+}
+
+.line-banner {
+  padding: 70px 5%;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.line-banner h2 {
+  font-size: clamp(45px, 10vw, 120px);
+  margin: 15px 0;
+  letter-spacing: -7px;
+}
+
+.line-banner p {
+  color: #999;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.a-theme {
+  background: #e9e6df;
+  color: #171717;
+}
+
+.b-theme {
+  background: #17151c;
+  color: white;
+}
+
+.b-theme .line-banner h2 {
+  color: var(--pink);
+  text-shadow: 3px 0 var(--blue);
+}
+
+.back-button {
+  border: 1px solid #555;
+  color: inherit;
+  background: transparent;
+  padding: 12px 18px;
+  margin: 30px 5%;
+  font-size: 11px;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 40px 5% 100px;
+}
+
+.detail-art {
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(55px, 10vw, 120px);
+  letter-spacing: -8px;
+}
+
+.detail-info {
+  padding: 30px 0;
+}
+
+.detail-info h1 {
+  font-size: clamp(30px, 5vw, 52px);
+  letter-spacing: -2px;
+}
+
+.detail-info p {
+  color: #999;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.detail-price {
+  font-size: 20px;
+  margin: 25px 0;
+}
+
+.sizes {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.size-button {
+  border: 1px solid #555;
+  background: transparent;
+  color: white;
+  padding: 12px 18px;
+}
+
+.size-button.selected {
+  background: white;
+  color: black;
+}
+
+.add-button {
+  width: 100%;
+  padding: 17px;
+  border: none;
+  background: var(--pink);
+  color: black;
+  font-weight: 800;
+  margin-top: 15px;
+}
+
+footer {
+  border-top: 1px solid #333;
+  padding: 35px 5%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  color: #888;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.footer-logo {
+  font-size: 20px;
+  color: white;
+  font-weight: 800;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  z-index: 10;
+  display: none;
+  justify-content: flex-end;
+}
+
+.overlay.open {
+  display: flex;
+}
+
+.cart {
+  width: min(420px, 100%);
+  height: 100%;
+  background: #f6f5f1;
+  color: #111;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.cart-header h2 {
+  font-size: 24px;
+}
+
+.close-cart {
+  border: 0;
+  background: none;
+  font-size: 26px;
+}
+
+.cart-item {
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.cart-total {
+  margin-top: 25px;
+  font-weight: 800;
+}
+
+.cart-note {
+  font-size: 11px;
+  color: #777;
+  line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+  nav {
+    height: 65px;
+    padding: 0 5%;
   }
-  .side { min-height: 40vh; }
+
+  .logo {
+    font-size: 23px;
+  }
+
+  .nav-links {
+    gap: 10px;
+    font-size: 9px;
+  }
+
+  .nav-links .optional {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .hero-panel {
+    min-height: 430px;
+    padding: 23px;
+  }
+
+  .hero-title {
+    letter-spacing: -5px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 0 4% 60px;
+  }
+
+  .section-heading {
+    padding: 45px 4% 22px;
+  }
+
+  .section-heading p {
+    max-width: 100px;
+    text-align: right;
+    line-height: 1.7;
+  }
+
+  .product-info {
+    font-size: 10px;
+  }
+
+  .detail {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding-top: 10px;
+  }
+
+  .detail-art {
+    min-height: 300px;
+  }
+
+  .intro {
+    padding: 70px 6%;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 </style>
 </head>
+
 <body>
-<header>FLIPSIDE</header>
-<main>
-  <a href="#side-a" class="side side-a">
-    <h1>SIDE A</h1>
-    <p>THE QUIET SIDE</p>
+
+<div class="topbar">
+  TWO SIDES. ONE IDENTITY.
+</div>
+
+<nav>
+  <a class="logo" href="#home" onclick="showView('home')">
+    FLIP<span>SIDE</span>®
   </a>
-  <a href="#side-b" class="side side-b">
-    <h1>SIDE B</h1>
-    <p>THE OTHER SIDE</p>
-  </a>
-</main>
-<footer>TWO SIDES. ONE IDENTITY.</footer>
+
+  <div class="nav-links">
+    <a href="#side-a" onclick="showLine('A')">SIDE A</a>
+    <a href="#side-b" onclick="showLine('B')">SIDE B</a>
+    <button class="nav-button" onclick="openCart()">
+      BAG (<span id="bag-count">0</span>)
+    </button>
+  </div>
+</nav>
+
+<!-- HOME -->
+
+<section id="home" class="view active">
+
+  <main class="hero">
+
+    <a href="#side-a" class="hero-panel panel-a"
+       onclick="showLine('A')">
+
+      <span class="eyebrow">01 / DAILY UNIFORM</span>
+
+      <div>
+        <h1 class="hero-title">SIDE<br>A.</h1>
+        <p class="hero-description">
+          Less noise.<br>
+          More of yourself.
+        </p>
+        <span class="enter">EXPLORE A <span>↗</span></span>
+      </div>
+
+      <span class="eyebrow">THE QUIET SIDE</span>
+    </a>
+
+    <a href="#side-b" class="hero-panel panel-b"
+       onclick="showLine('B')">
+
+      <span class="eyebrow">02 / AFTER HOURS</span>
+
+      <div>
+        <h1 class="hero-title">SIDE<br>B.</h1>
+        <p class="hero-description">
+          Break the pattern.<br>
+          Become the noise.
+        </p>
+        <span class="enter">EXPLORE B <span>↗</span></span>
+      </div>
+
+      <span class="eyebrow">THE OTHER SIDE</span>
+    </a>
+
+  </main>
+
+  <section class="intro">
+    <span class="intro-label">ABOUT FLIPSIDE®</span>
+    <h2>ONE PERSON.<br>TWO DIFFERENT WORLDS.</h2>
+    <p>
+      You are never just one thing.<br>
+      FLIPSIDE explores the contrast within us.<br>
+      Find the side that feels like you.
+    </p>
+  </section>
+
+  <div class="section-heading">
+    <div>
+      <p>CURATED FOR YOU</p>
+      <h2>THE COLLECTION</h2>
+    </div>
+    <p>SELECT YOUR SIDE ↗</p>
+  </div>
+
+  <div class="products" id="home-products"></div>
+
+</section>
+
+<!-- SIDE A -->
+
+<section id="side-a" class="view a-theme">
+
+  <button class="back-button" onclick="showView('home')">
+    ← BACK TO HOME
+  </button>
+
+  <div class="line-banner">
+    <span class="eyebrow">FLIPSIDE® / LINE 01</span>
+    <h2>SIDE A.</h2>
+    <p>
+      QUIET BY DESIGN.<br>
+      Everyday pieces for your own pace.
+    </p>
+  </div>
+
+  <div class="section-heading">
+    <div>
+      <p>LINE 01 / DAILY</p>
+      <h2>THE QUIET SIDE</h2>
+    </div>
+    <p id="count-a"></p>
+  </div>
+
+  <div class="products" id="products-a"></div>
+
+</section>
+
+<!-- SIDE B -->
+
+<section id="side-b" class="view b-theme">
+
+  <button class="back-button" onclick="showView('home')">
+    ← BACK TO HOME
+  </button>
+
+  <div class="line-banner">
+    <span class="eyebrow">FLIPSIDE® / LINE 02</span>
+    <h2>SIDE B.</h2>
+    <p>
+      MADE TO STAND OUT.<br>
+      For everything you keep inside.
+    </p>
+  </div>
+
+  <div class="section-heading">
+    <div>
+      <p>LINE 02 / EXPERIMENTAL</p>
+      <h2>THE OTHER SIDE</h2>
+    </div>
+    <p id="count-b"></p>
+  </div>
+
+  <div class="products" id="products-b"></div>
+
+</section>
+
+<!-- PRODUCT DETAIL -->
+
+<section id="detail-view" class="view">
+
+  <button class="back-button" onclick="goBack()">
+    ← BACK TO COLLECTION
+  </button>
+
+  <div class="detail">
+
+    <div class="detail-art" id="detail-art">
+      FLIP
+    </div>
+
+    <div class="detail-info">
+      <span class="eyebrow" id="detail-line">FLIPSIDE®</span>
+      <h1 id="detail-name">PRODUCT NAME</h1>
+      <div class="detail-price" id="detail-price">₩ 0</div>
+
+      <p id="detail-description">
+        Product description.
+      </p>
+
+      <p>SELECT SIZE</p>
+
+      <div class="sizes">
+        <button class="size-button" onclick="selectSize(this)">S</button>
+        <button class="size-button" onclick="selectSize(this)">M</button>
+        <button class="size-button" onclick="selectSize(this)">L</button>
+        <button class="size-button" onclick="selectSize(this)">XL</button>
+      </div>
+
+      <button class="add-button" onclick="addToCart()">
+        ADD TO BAG +
+      </button>
+
+      <p>
+        이 페이지는 브랜드 시제품입니다.<br>
+        현재 상품은 예시이며 실제 판매 상품이 아닙니다.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  <div class="footer-logo">FLIPSIDE®</div>
+  <div>TWO SIDES. ONE IDENTITY.</div>
+  <div>SEOUL, SOUTH KOREA</div>
+  <div>© FLIPSIDE 2026</div>
+</footer>
+
+<!-- CART -->
+
+<div class="overlay" id="cart-overlay" onclick="closeCartOutside(event)">
+  <aside class="cart">
+
+    <div class="cart-header">
+      <h2>YOUR BAG</h2>
+      <button class="close-cart" onclick="closeCart()">×</button>
+    </div>
+
+    <div id="cart-items">
+      <p>Your bag is empty.</p>
+    </div>
+
+    <div class="cart-total" id="cart-total"></div>
+
+    <p class="cart-note">
+      현재 장바구니는 화면 시연용입니다.
+      주문이나 결제는 처리되지 않습니다.
+    </p>
+
+  </aside>
+</div>
+
+<script>
+const products = [
+  {
+    id: 1,
+    name: "ESSENTIAL TEE",
+    line: "A",
+    category: "BASIC SERIES",
+    price: 39000,
+    color: "#dcd8ce",
+    ink: "#242424",
+    art: "F.",
+    description: "일상에 자연스럽게 스며드는 기본 티셔츠. 심플한 실루엣과 절제된 디자인."
+  },
+  {
+    id: 2,
+    name: "DAILY HOODIE",
+    line: "A",
+    category: "DAILY SERIES",
+    price: 79000,
+    color: "#b5b3ae",
+    ink: "#252525",
+    art: "A—01",
+    description: "편안한 착용감과 여유로운 실루엣을 중심으로 한 데일리 후디."
+  },
+  {
+    id: 3,
+    name: "RELAXED SHIRT",
+    line: "A",
+    category: "DAILY SERIES",
+    price: 59000,
+    color: "#dedbd2",
+    ink: "#353535",
+    art: "FORM",
+    description: "과한 장식 없이 소재와 실루엣에 집중한 셔츠."
+  },
+  {
+    id: 4,
+    name: "STATIC GRAPHIC TEE",
+    line: "B",
+    category: "STATIC SERIES",
+    price: 49000,
+    color: "#24212c",
+    ink: "#ff49c8",
+    art: "STATIC",
+    description: "겹쳐진 그래픽과 강한 색 대비를 활용한 스트릿 그래픽 티셔츠."
+  },
+  {
+    id: 5,
+    name: "GLITCH LONG SLEEVE",
+    line: "B",
+    category: "GLITCH SERIES",
+    price: 59000,
+    color: "#111111",
+    ink: "#54dcff",
+    art: "GL!TCH",
+    description: "왜곡된 타이포그래피와 비대칭적인 그래픽을 강조한 롱슬리브."
+  },
+  {
+    id: 6,
+    name: "AFTER DARK HOODIE",
+    line: "B",
+    category: "AFTER DARK",
+    price: 89000,
+    color: "#322c3d",
+    ink: "#ff49c8",
+    art: "B—02",
+    description: "어두운 컬러와 강한 그래픽으로 완성한 오버사이즈 후디."
+  }
+];
+
+let currentProduct = null;
+let previousView = "home";
+let selectedSize = "";
+let cart = [];
+
+function money(price) {
+  return "₩ " + price.toLocaleString("ko-KR");
+}
+
+function productCard(product) {
+  return `
+    <article class="product-card"
+      onclick="openProduct(${product.id})"
+      tabindex="0"
+      onkeydown="if(event.key==='Enter')openProduct(${product.id})">
+
+      <div class="product-image"
+        style="background:${product.color};color:${product.ink}">
+
+        <div class="product-placeholder">
+          <small>FLIPSIDE® / SIDE ${product.line}</small>
+          <b>${product.art}</b>
+          <small>${product.category}</small>
+        </div>
+
+        <span class="product-tag">COMING SOON</span>
+      </div>
+
+      <div class="product-info">
+        <div>
+          <strong>${product.name}</strong>
+          <p>SIDE ${product.line} / ${product.category}</p>
+        </div>
+        <span class="price">${money(product.price)}</span>
+      </div>
+    </article>
+  `;
+}
+
+function renderProducts() {
+  document.getElementById("home-products").innerHTML =
+    products.slice(0, 3).map(productCard).join("");
+
+  document.getElementById("products-a").innerHTML =
+    products.filter(p => p.line === "A").map(productCard).join("");
+
+  document.getElementById("products-b").innerHTML =
+    products.filter(p => p.line === "B").map(productCard).join("");
+
+  document.getElementById("count-a").textContent =
+    products.filter(p => p.line === "A").length + " ITEMS";
+
+  document.getElementById("count-b").textContent =
+    products.filter(p => p.line === "B").length + " ITEMS";
+}
+
+function showView(id) {
+  document.querySelectorAll(".view").forEach(view => {
+    view.classList.remove("active");
+  });
+
+  document.getElementById(id).classList.add("active");
+
+  if (id !== "detail-view") {
+    previousView = id;
+  }
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function showLine(line) {
+  showView(line === "A" ? "side-a" : "side-b");
+}
+
+function openProduct(id) {
+  currentProduct = products.find(p => p.id === id);
+  selectedSize = "";
+
+  document.querySelectorAll(".size-button").forEach(button => {
+    button.classList.remove("selected");
+  });
+
+  document.getElementById("detail-line").textContent =
+    "FLIPSIDE® / SIDE " + currentProduct.line;
+
+  document.getElementById("detail-name").textContent =
+    currentProduct.name;
+
+  document.getElementById("detail-price").textContent =
+    money(currentProduct.price);
+
+  document.getElementById("detail-description").textContent =
+    currentProduct.description;
+
+  const art = document.getElementById("detail-art");
+
+  art.style.background = currentProduct.color;
+  art.style.color = currentProduct.ink;
+  art.textContent = currentProduct.art;
+
+  previousView = currentProduct.line === "A" ? "side-a" : "side-b";
+
+  showView("detail-view");
+}
+
+function goBack() {
+  showView(previousView);
+}
+
+function selectSize(button) {
+  document.querySelectorAll(".size-button").forEach(item => {
+    item.classList.remove("selected");
+  });
+
+  button.classList.add("selected");
+  selectedSize = button.textContent;
+}
+
+function addToCart() {
+  if (!currentProduct) return;
+
+  if (!selectedSize) {
+    alert("사이즈를 선택해 줘.");
+    return;
+  }
+
+  cart.push({
+    ...currentProduct,
+    size: selectedSize
+  });
+
+  updateCart();
+  openCart();
+}
+
+function updateCart() {
+  document.getElementById("bag-count").textContent = cart.length;
+
+  const items = document.getElementById("cart-items");
+  const total = document.getElementById("cart-total");
+
+  if (cart.length === 0) {
+    items.innerHTML = "<p>Your bag is empty.</p>";
+    total.textContent = "";
+    return;
+  }
+
+  items.innerHTML = cart.map((item, index) => `
+    <div class="cart-item">
+      <strong>${item.name}</strong><br>
+      SIDE ${item.line} / SIZE ${item.size}<br>
+      ${money(item.price)}
+      <button
+        style="float:right;border:0;background:none;text-decoration:underline"
+        onclick="removeFromCart(${index})">
+        REMOVE
+      </button>
+    </div>
+  `).join("");
+
+  total.textContent = "TOTAL  " +
+    money(cart.reduce((sum, item) => sum + item.price, 0));
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  updateCart();
+}
+
+function openCart() {
+  updateCart();
+  document.getElementById("cart-overlay").classList.add("open");
+}
+
+function closeCart() {
+  document.getElementById("cart-overlay").classList.remove("open");
+}
+
+function closeCartOutside(event) {
+  if (event.target.id === "cart-overlay") {
+    closeCart();
+  }
+}
+
+renderProducts();
+</script>
+
 </body>
 </html>
